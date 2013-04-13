@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>spring</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project-version>1.0-SNAPSHOT</project-version>
+
+		<!-- dependency version -->
+		<camel-version>2.10.4</camel-version>
+		<spring-version>3.1.4.RELEASE</spring-version>
+		<slf4j-version>1.7.5</slf4j-version>
+		<groovy-version>2.1.3</groovy-version>
+		<cxf-version>2.8.0-SNAPSHOT</cxf-version>
+		<!-- plugins version -->
+		<java-version>1.6</java-version>
+		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+		<maven-bundle-plugin.version>2.3.7</maven-bundle-plugin.version>
+		<maven-pax-plugin.version>1.5</maven-pax-plugin.version>
+		<maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
+		<maven-project-info-reports-plugin.version>2.5.1</maven-project-info-reports-plugin.version>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>	
+	</dependencies>	
+
+	<modules>
+		<module>app</module>
+		<module>app-jar</module>
+		<module>app-war</module>
+		<module>app-osgi</module>
+	</modules>
+</project>	
